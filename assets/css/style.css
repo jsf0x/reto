@@ -1,0 +1,32 @@
+.section-category-car img {
+    max-width: 400px;
+    height: 500px;
+    object-fit: cover;
+}
+
+.section-category2 img {
+    max-width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.section-category3 img {
+    max-width: 500px;
+    height: 300px;
+    object-fit: cover;
+}
+
+
+
+.card {
+    background: #f9f9f9;
+    border-radius: 10px;
+    margin: 10px;
+    width: 80%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
