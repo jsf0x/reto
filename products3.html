@@ -114,12 +114,12 @@
             <div class="row">
                 <div class="col-lg-5 mt-5">
                     <div class="card mb-3">
-                        <img class="card-img img-fluid" src="assets/img/Gafa.png"
+                        <img id="main-image" class="card-img img-fluid" src="assets/img/Gafa.png"
                             alt="Camisa hawaiana estilo caribeño">
                     </div>
                     <div class="row">
                         <div class="col-1 align-self-center">
-                            <a href="#multi-item-example" role="button" data-bs-slide="prev">
+                            <a href="#multi-item-example" role="button" data-bs-slide="prev" id="prev-button">
                                 <i class="text-dark fas fa-chevron-left"></i>
                                 <span class="sr-only">Anterior</span>
                             </a>
@@ -130,19 +130,19 @@
                                 <div class="carousel-item active">
                                     <div class="row">
                                         <div class="col-4">
-                                            <a href="#">
+                                            <a href="#" class="carousel-link" data-image="assets/img/gafas_sol.jpg">
                                                 <img class="card-img img-fluid" src="assets/img/gafas_sol.jpg"
                                                     alt="Vista 1 de la camisa hawaiana">
                                             </a>
                                         </div>
                                         <div class="col-4">
-                                            <a href="#">
+                                            <a href="#" class="carousel-link" data-image="assets/img/Gafa.png">
                                                 <img class="card-img img-fluid" src="assets/img/Gafa.png"
                                                     alt="Vista 2 de la camisa hawaiana">
                                             </a>
                                         </div>
                                         <div class="col-4">
-                                            <a href="#">
+                                            <a href="#" class="carousel-link" data-image="assets/img/gafas_sol.jpg">
                                                 <img class="card-img img-fluid" src="assets/img/gafas_sol.jpg"
                                                     alt="Vista 3 de la camisa hawaiana">
                                             </a>
@@ -152,7 +152,7 @@
                             </div>
                         </div>
                         <div class="col-1 align-self-center">
-                            <a href="#multi-item-example" role="button" data-bs-slide="next">
+                            <a href="#multi-item-example" role="button" data-bs-slide="next" id="next-button">
                                 <i class="text-dark fas fa-chevron-right"></i>
                                 <span class="sr-only">Siguiente</span>
                             </a>
@@ -265,7 +265,56 @@
 
     </section>
 
+    <script>
+        // Obtener todas las miniaturas del carrusel
+        const carouselLinks = document.querySelectorAll('.carousel-link');
+    
+        // Agregar un evento de clic a cada una
+        carouselLinks.forEach(link => {
+            link.addEventListener('click', function(event) {
+                // Evitar que el enlace haga su acción predeterminada
+                event.preventDefault();
+    
+                // Obtener la URL de la imagen de la miniatura
+                const newImageSrc = event.target.src;
+    
+                // Cambiar la imagen principal
+                document.getElementById('main-image').src = newImageSrc;
+            });
+        });
+    </script>
 
+<script>
+    // Obtener el carrusel y los controles
+    const carousel = document.querySelector('#multi-item-example');
+    const prevButton = document.querySelector('#prev-button');
+    const nextButton = document.querySelector('#next-button');
+    const mainImage = document.getElementById('main-image');
+    
+    // Función para actualizar la imagen principal
+    function updateMainImage() {
+        // Obtener el índice de la imagen activa del carrusel
+        const activeItem = carousel.querySelector('.carousel-item.active');
+        // Buscar la primera imagen dentro de esa item
+        const newImageSrc = activeItem.querySelector('img').src;
+        // Cambiar la imagen principal
+        mainImage.src = newImageSrc;
+    }
+    
+    // Añadir los eventos 'slide.bs.carousel' a los botones de navegación
+    prevButton.addEventListener('click', function () {
+        // Esperar el cambio de la imagen para actualizar la imagen central
+        setTimeout(updateMainImage, 300); // 300ms es suficiente para que el carrusel cambie de imagen
+    });
+
+    nextButton.addEventListener('click', function () {
+        // Esperar el cambio de la imagen para actualizar la imagen central
+        setTimeout(updateMainImage, 300); // 300ms es suficiente para que el carrusel cambie de imagen
+    });
+
+    // También actualizamos la imagen central cuando el carrusel se deslice
+    carousel.addEventListener('slid.bs.carousel', updateMainImage);
+</script>
 
     <!--pie de pagina-->
     <footer class="bg-dark" id="templatemo_foooter">
