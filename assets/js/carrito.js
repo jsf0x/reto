@@ -5,46 +5,54 @@ document.addEventListener('DOMContentLoaded', () => {
     const baseDeDatos = [
         {
             id: 1,
-            nombre: 'Sombrero vueltiao con la bandera de Colombia, 23 vueltas',
-            precio: 250000,
-            imagen: 'assets/img/feature_prod_01.jpg',
-            categoria: 'sombreros'
+            nombre: 'Camisa 1',
+            precio: 90000,
+            imagen: 'assets/img/Tshit1.jpg',
+            categoria: 'Camisas'
         },
         {
             id: 2,
-            nombre: 'Sombrero vueltiao-machiembriao',
-            precio: 150000,
-            imagen: 'assets/img/sombrero4.jpg',
-            categoria: 'sombreros'
+            nombre: 'Camisa 2',
+            precio: 90000,
+            imagen: 'assets/img/Tshit2.jpg',
+            categoria: 'Camisas'
         },
         {
             id: 3,
-            nombre: 'Sombrero vueltiao colombiano 15 vueltas tricolor',
-            precio: 250000,
-            imagen: 'assets/img/feature_prod_02.jpg',
-            categoria: 'sombreros'
+            nombre: 'Camisa 3',
+            precio: 90000,
+            imagen: 'assets/img/tshit3.jpg',
+            categoria: 'Camisas'
         },
         {
             id: 4,
-            nombre: 'Mochila wayuu azul 6',
-            precio: 120000,
-            imagen: 'assets/img/shop_04.jpg',
-            categoria: 'mochilas'
+            nombre: 'Camisa 4',
+            precio: 95000,
+            imagen: 'assets/img/tshit4.jpg',
+            categoria: 'Camisas'
         },
         {
             id: 5,
-            nombre: 'Bolso en fique',
-            precio: 120000,
-            imagen: 'assets/img/shop_03.jpg',
-            categoria: 'bolsos'
+            nombre: 'Bermuda 1',
+            precio: 45000,
+            imagen: 'assets/img/Ber_roja.png',
+            categoria: 'Bermudas'
         },
         {
             id: 6,
-            nombre: 'Hamaca',
+            nombre: 'Bermuda 2',
+            precio: 50000,
+            imagen: 'assets/img/Ber_white.jpg',
+            categoria: 'Bermudas'
+        },
+        {
+            id: 7,
+            nombre: 'Gafas 1',
             precio: 120000,
-            imagen: 'assets/img/category_img_02.jpg',
-            categoria: 'hamacas'
+            imagen: 'assets/img/gafas_sol.jpg',
+            categoria: 'Gafas'
         }
+
     ];
 
     let carrito = [];
