@@ -5,3 +5,4 @@ Este es un proyecto de una pagina web básica haciendo uso de lo aprendido hasta
 ## DESARROLLADORES
 Jair Salcedo
 Jorge Ivan Molina
+Teresa Santoya
